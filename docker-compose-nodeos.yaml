@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+    nodeos:
+        image: eostudio/eos:v2.0.7
+        container_name: ${NODE_NAME}
+        command: /usr/bin/nodeos --data-dir=/data --config-dir=/etc/nodeos ${SUB_COMMAND}
+        volumes:
+            - ./nodeos-data-volume/nodeos-data/config:/etc/nodeos
+            - ./nodeos-data-volume/nodeos-data/data:/data
+            - ./nodeos-data-volume/nodeos-data/contracts:/contracts
+            - ./nodeos-data-volume/nodeos-data/old_contracts:/old_contracts
+        ports:
+            - "13615:9876"
+
+    nginx:
+        container_name: ${NODE_NAME}-nginx
+        build:
+            dockerfile: Dockerfile
+            context: ./Nginx
+        volumes:
+            - ./Nginx/logs:/var/log/nginx
+        ports:
+            - "13915:80"
