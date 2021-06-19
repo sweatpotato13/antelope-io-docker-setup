@@ -1,4 +1,6 @@
 #!/bin/bash
+../cleos.sh set contract eosio /contracts/old_versions/eosio.bios -p eosio
+
 # GET_SENDER
 ../cleos.sh push action eosio activate '["f0af56d2c5a48d60a4a5b5c903edfb7db3a736a94ed589d0b797df33ff9d3e1d"]' -p eosio
 
@@ -34,3 +36,5 @@
 
 # WTMSIG_BLOCK_SIGNATURES
 ../cleos.sh push action eosio activate '["299dcb6af692324b899b39f16d5a530a33062804e41f09dc97e9f156b4476707"]' -p eosio
+
+../cleos.sh set contract eosio /contracts/eosio.bios -p eosio
