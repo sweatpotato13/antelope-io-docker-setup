@@ -2,9 +2,9 @@
 
 function usage() {
     printf "Usage: $0 OPTION...
-    -i          nodeos 초기화 시작
-    -r          nodeos 블록 유지한채 재시작
-    -s NAME     nodeos 스냅샷을 활용한 replay
+    -i          start nodeos with initialize 
+    -r          restart nodeos with current blocks
+    -s NAME     replay nodeos with snapshot
     \\n" "$0" 1>&2
     exit 1
 }
