@@ -2,7 +2,7 @@ version: "3"
 
 services:
     nodeos:
-        image: eostudio/eos:v2.0.7
+        image: sweatpotato/eos:2.0.13
         container_name: ${NODE_NAME}
         command: /usr/bin/nodeos --data-dir=/data --config-dir=/etc/nodeos ${SUB_COMMAND}
         volumes:
@@ -10,14 +10,6 @@ services:
             - ./nodeos-data-volume/nodeos-data/data:/data
             - ./nodeos-data-volume/nodeos-data/contracts:/contracts
         ports:
-            - "13615:9876"
-
-    nginx:
-        container_name: ${NODE_NAME}-nginx
-        build:
-            dockerfile: Dockerfile
-            context: ./Nginx
-        volumes:
-            - ./Nginx/logs:/var/log/nginx
-        ports:
-            - "13915:80"
+            - "9876:9876"
+            - "8888:8888"
+            - "8080:8080"
