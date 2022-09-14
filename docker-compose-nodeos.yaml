@@ -2,9 +2,9 @@ version: "3"
 
 services:
     nodeos:
-        image: sweatpotato/eos:2.0.13
+        image: sweatpotato/leap:3.1.0
         container_name: ${NODE_NAME}
-        command: /usr/bin/nodeos --data-dir=/data --config-dir=/etc/nodeos ${SUB_COMMAND}
+        command: nodeos --data-dir=/data --config-dir=/etc/nodeos ${SUB_COMMAND}
         volumes:
             - ./nodeos-data-volume/nodeos-data/config:/etc/nodeos
             - ./nodeos-data-volume/nodeos-data/data:/data

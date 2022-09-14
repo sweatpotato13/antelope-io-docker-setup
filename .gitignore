@@ -2,3 +2,8 @@
 .vscode
 
 Nginx/logs/
+
+nodeos-data-volume/nodeos-data/config/protocol_features
+nodeos-data-volume/nodeos-data/data/blocks/
+nodeos-data-volume/nodeos-data/data/snapshots/
+nodeos-data-volume/nodeos-data/data/state/
